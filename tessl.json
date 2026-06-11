@@ -5,12 +5,20 @@
     "sickn33/antigravity-awesome-skills": {
       "version": "7888a7ee53c6a23b4f61b259ef26b5f305ca9498",
       "source": "https://github.com/sickn33/antigravity-awesome-skills",
-      "include": { "skills": ["007"] }
+      "include": {
+        "skills": [
+          "007"
+        ]
+      }
     },
     "inprojectspl/conventional-commits": {
       "version": "6c3385c7d2db0f0c7c2dfbc23a9972b1def4c8f6",
       "source": "https://github.com/inprojectspl/conventional-commits",
-      "include": { "skills": ["."] }
+      "include": {
+        "skills": [
+          "."
+        ]
+      }
     }
   }
 }
