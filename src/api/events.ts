@@ -23,6 +23,7 @@ const eventsRoute: FastifyPluginAsync = async (app) => {
         type: req.body.type,
         payload: req.body.payload ?? {}
       })
+      store.pruneOldEvents(req.body.projectId)
       return reply.status(201).send(event)
     }
   )
