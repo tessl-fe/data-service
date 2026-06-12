@@ -42,6 +42,15 @@ export class InMemoryStore {
       .sort((a, b) => a.date.localeCompare(b.date))
   }
 
+  searchEvents(projectId: string, type?: string, since?: Date): Event[] {
+    return this.events.filter(e => {
+      if (e.projectId !== projectId) return false
+      if (type && e.type !== type) return false
+      if (since && e.timestamp < since) return false
+      return true
+    })
+  }
+
   clear(): void {
     this.events = []
   }

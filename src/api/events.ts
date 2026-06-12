@@ -26,6 +26,15 @@ const eventsRoute: FastifyPluginAsync = async (app) => {
       return reply.status(201).send(event)
     }
   )
+  app.get<{ Params: { projectId: string }; Querystring: { type?: string; since?: string } }>(
+    '/events/:projectId',
+    async (req) => {
+      const { projectId } = req.params
+      const { type, since } = req.query
+      const sinceDate = since ? new Date(since) : undefined
+      return store.searchEvents(projectId, type, sinceDate)
+    }
+  )
 }
 
 export default eventsRoute
